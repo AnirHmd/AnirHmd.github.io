@@ -44,3 +44,11 @@ document.addEventListener('keydown', event => {
   }
 });
 
+function closePage() {
+  window.close();
+
+  // Si le navigateur refuse de fermer l'onglet
+  setTimeout(() => {
+    window.location.href = "about:blank";
+  }, 100);
+}
