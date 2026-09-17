@@ -1,8 +1,304 @@
-<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#245edb"><meta name="description" content="Portfolio d'Anir Hamdaoui — informatique, génie logiciel et analyse TI."><title>Expérience • Anir Hamdaoui</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"></head><body data-page="experience"><div class="desktop"><header class="desktop-icons" aria-label="Navigation principale"><a class="desktop-icon" href="index.html" ><span class="icon-screen" aria-hidden="true">⌂</span><span>Accueil</span></a><a class="desktop-icon active" href="experience.html" aria-current="page"><span class="icon-folder" aria-hidden="true">▣</span><span>Expérience</span></a><a class="desktop-icon" href="projets.html" ><span class="icon-folder" aria-hidden="true">★</span><span>Projets</span></a></header><main class="window main-window" id="main-content"><div class="titlebar"><span class="title-icon" aria-hidden="true">▣</span><span class="title">Expérience — Anir Hamdaoui</span><span class="window-buttons" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div><div class="address-bar"><span>Adresse</span><div>📁 Mon ordinateur / Anir Hamdaoui / Expérience</div><span class="go" aria-hidden="true">↗</span></div><div class="window-body">
-    <div class="page-heading"><span class="page-mark" aria-hidden="true">▣</span><div><span class="overline">Mon parcours</span><h1>Expérience</h1><p>Analyse TI, développement logiciel et support technique.</p></div></div>
-    <div class="experience-list">
-      <article class="experience-card"><div class="experience-top"><div><span class="type-tag">Analyse TI · BI</span><h2>Stagiaire analyste TI</h2><p class="company">Ville de Montréal · Montréal, QC</p></div><span class="date-tag">Janvier — Août 2026</span></div><ul><li>Développement de scripts Power Query (M) reliant Omnissa Intelligence aux outils Microsoft et configuration de Power BI Service pour l'actualisation continue des données.</li><li>Conception de tableaux de bord DAX pour plus de <strong>30 000 appareils</strong> : migration Windows 11, audits BIOS/UEFI et cycle de vie des flottes iOS et Android.</li><li>Structuration de l'inventaire dans Workspace ONE avec Smart Groups, orchestration des déploiements par vagues et automatisation PowerShell (remédiation WMIC).</li><li>Traduction des besoins de la Ville de Montréal et du SPVM en indicateurs décisionnels, avec documentation technique dans Jira.</li></ul><div class="tag-row"><span>Power BI</span><span>Power Query</span><span>DAX</span><span>Workspace ONE</span><span>PowerShell</span></div></article>
-      <article class="experience-card"><div class="experience-top"><div><span class="type-tag">Développement logiciel</span><h2>Stagiaire en développement logiciel</h2><p class="company">K-Dev Algeria · Bejaïa, Algérie</p></div><span class="date-tag">Mai — Septembre 2022</span></div><ul><li>Développement et intégration d'un CRM en Java, Spring Boot et MySQL connecté à des API internes.</li><li>Conception orientée objet et rédaction de documentation technique pour faciliter la maintenance.</li><li>Collaboration en mode Agile Kanban avec gestion des versions sous Git.</li></ul><div class="tag-row"><span>Java</span><span>Spring Boot</span><span>MySQL</span><span>Git</span><span>Kanban</span></div></article>
-      <article class="experience-card"><div class="experience-top"><div><span class="type-tag">Support & réseaux</span><h2>Stagiaire en support technique et réseaux</h2><p class="company">CMTD Hamdaoui · Bejaïa, Algérie</p></div><span class="date-tag">Juin — Octobre 2021</span></div><ul><li>Diagnostic matériel et résolution de problèmes de connectivité réseau.</li><li>Analyse de données commerciales et création de tableaux de bord de suivi avec Power BI.</li></ul><div class="tag-row"><span>Support TI</span><span>Réseaux</span><span>Power BI</span></div></article>
-      <article class="experience-card compact"><div class="experience-top"><div><span class="type-tag">Autres expériences</span><h2>Vente & service client</h2><p class="company">Best Buy (2026) · Access Research Inc (2024–2025) · Studio Seigneurie (2017–2023)</p></div><span class="date-tag">2017 — présent</span></div><p>Expériences qui ont renforcé ma relation client, mon adaptation rapide et ma communication bilingue en milieu professionnel.</p></article>
-    </div></div><div class="statusbar"><span>Expérience</span><span>Portfolio d'Anir Hamdaoui</span></div></main></div><footer class="taskbar"><button class="start-button" type="button" aria-expanded="false" aria-controls="start-menu"><img src="windows-xp-logo.png" alt="" width="27" height="27"> démarrer</button><div class="task-item"><span aria-hidden="true">▣</span> Expérience</div><div class="task-spacer"></div><span class="tray" id="clock" aria-label="Heure actuelle"></span></footer><div class="start-menu" id="start-menu" hidden><div class="start-head">Anir Hamdaoui</div><a href="index.html">⌂ &nbsp; Accueil</a><a href="experience.html">▣ &nbsp; Expérience</a><a href="projets.html">★ &nbsp; Projets</a><div class="start-foot"><a href="mailto:anirhamdaouii@gmail.com">✉ &nbsp; Me contacter</a></div></div><script src="app.js" defer></script></body></html>
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#245edb">
+    <meta name="description" content="Portfolio d'Anir Hamdaoui — informatique, génie logiciel et analyse TI.">
+    <title>
+      Expérience • Anir Hamdaoui
+    </title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-page="experience">
+    <div class="desktop">
+      <!-- Les trois raccourcis du bureau constituent la navigation principale. -->
+      <header class="desktop-icons" aria-label="Navigation principale">
+        <a class="desktop-icon" href="index.html">
+          <span class="icon-screen" aria-hidden="true">
+            ⌂
+          </span>
+          <span>
+            Accueil
+          </span>
+        </a>
+        <a class="desktop-icon active" href="experience.html" aria-current="page">
+          <span class="icon-folder" aria-hidden="true">
+            ▣
+          </span>
+          <span>
+            Expérience
+          </span>
+        </a>
+        <a class="desktop-icon" href="projets.html">
+          <span class="icon-folder" aria-hidden="true">
+            ★
+          </span>
+          <span>
+            Projets
+          </span>
+        </a>
+      </header>
+      <!-- Contenu affiché dans la fenêtre Windows XP. -->
+      <main class="window main-window" id="main-content">
+        <div class="titlebar">
+          <span class="title-icon" aria-hidden="true">
+            ▣
+          </span>
+          <span class="title">
+            Expérience — Anir Hamdaoui
+          </span>
+          <span class="window-buttons" aria-hidden="true">
+            <i>
+              _
+            </i>
+            <i>
+              □
+            </i>
+            <i>
+              ×
+            </i>
+          </span>
+        </div>
+        <div class="address-bar">
+          <span>
+            Adresse
+          </span>
+          <div>
+            📁 Mon ordinateur / Anir Hamdaoui / Expérience
+          </div>
+          <span class="go" aria-hidden="true">
+            ↗
+          </span>
+        </div>
+        <div class="window-body">
+          <div class="page-heading">
+            <span class="page-mark" aria-hidden="true">
+              ▣
+            </span>
+            <div>
+              <span class="overline">
+                Mon parcours
+              </span>
+              <h1>
+                Expérience
+              </h1>
+              <p>
+                Analyse TI, développement logiciel et support technique.
+              </p>
+            </div>
+          </div>
+          <!-- Expériences techniques et professionnelles. -->
+          <div class="experience-list">
+            <article class="experience-card">
+              <div class="experience-top">
+                <div>
+                  <span class="type-tag">
+                    Analyse TI · BI
+                  </span>
+                  <h2>
+                    Stagiaire analyste TI
+                  </h2>
+                  <p class="company">
+                    Ville de Montréal · Montréal, QC
+                  </p>
+                </div>
+                <span class="date-tag">
+                  Janvier — Août 2026
+                </span>
+              </div>
+              <ul>
+                <li>
+                  Développement de scripts Power Query (M) reliant Omnissa Intelligence aux outils Microsoft et configuration de Power BI Service pour l'actualisation continue des données.
+                </li>
+                <li>
+                  Conception de tableaux de bord DAX pour plus de
+                  <strong>
+                    30 000 appareils
+                  </strong>
+                  : migration Windows 11, audits BIOS/UEFI et cycle de vie des flottes iOS et Android.
+                </li>
+                <li>
+                  Structuration de l'inventaire dans Workspace ONE avec Smart Groups, orchestration des déploiements par vagues et automatisation PowerShell (remédiation WMIC).
+                </li>
+                <li>
+                  Traduction des besoins de la Ville de Montréal et du SPVM en indicateurs décisionnels, avec documentation technique dans Jira.
+                </li>
+              </ul>
+              <div class="tag-row">
+                <span>
+                  Power BI
+                </span>
+                <span>
+                  Power Query
+                </span>
+                <span>
+                  DAX
+                </span>
+                <span>
+                  Workspace ONE
+                </span>
+                <span>
+                  PowerShell
+                </span>
+              </div>
+            </article>
+            <article class="experience-card">
+              <div class="experience-top">
+                <div>
+                  <span class="type-tag">
+                    Développement logiciel
+                  </span>
+                  <h2>
+                    Stagiaire en développement logiciel
+                  </h2>
+                  <p class="company">
+                    K-Dev Algeria · Bejaïa, Algérie
+                  </p>
+                </div>
+                <span class="date-tag">
+                  Mai — Septembre 2022
+                </span>
+              </div>
+              <ul>
+                <li>
+                  Développement et intégration d'un CRM en Java, Spring Boot et MySQL connecté à des API internes.
+                </li>
+                <li>
+                  Conception orientée objet et rédaction de documentation technique pour faciliter la maintenance.
+                </li>
+                <li>
+                  Collaboration en mode Agile Kanban avec gestion des versions sous Git.
+                </li>
+              </ul>
+              <div class="tag-row">
+                <span>
+                  Java
+                </span>
+                <span>
+                  Spring Boot
+                </span>
+                <span>
+                  MySQL
+                </span>
+                <span>
+                  Git
+                </span>
+                <span>
+                  Kanban
+                </span>
+              </div>
+            </article>
+            <article class="experience-card">
+              <div class="experience-top">
+                <div>
+                  <span class="type-tag">
+                    Support & réseaux
+                  </span>
+                  <h2>
+                    Stagiaire en support technique et réseaux
+                  </h2>
+                  <p class="company">
+                    CMTD Hamdaoui · Bejaïa, Algérie
+                  </p>
+                </div>
+                <span class="date-tag">
+                  Juin — Octobre 2021
+                </span>
+              </div>
+              <ul>
+                <li>
+                  Diagnostic matériel et résolution de problèmes de connectivité réseau.
+                </li>
+                <li>
+                  Analyse de données commerciales et création de tableaux de bord de suivi avec Power BI.
+                </li>
+              </ul>
+              <div class="tag-row">
+                <span>
+                  Support TI
+                </span>
+                <span>
+                  Réseaux
+                </span>
+                <span>
+                  Power BI
+                </span>
+              </div>
+            </article>
+            <article class="experience-card compact">
+              <div class="experience-top">
+                <div>
+                  <span class="type-tag">
+                    Autres expériences
+                  </span>
+                  <h2>
+                    Vente & service client
+                  </h2>
+                  <p class="company">
+                    Best Buy (2026) · Access Research Inc (2024–2025) · Studio Seigneurie (2017–2023)
+                  </p>
+                </div>
+                <span class="date-tag">
+                  2017 — présent
+                </span>
+              </div>
+              <p>
+                Expériences qui ont renforcé ma relation client, mon adaptation rapide et ma communication bilingue en milieu professionnel.
+              </p>
+            </article>
+          </div>
+        </div>
+        <div class="statusbar">
+          <span>
+            Expérience
+          </span>
+          <span>
+            Portfolio d'Anir Hamdaoui
+          </span>
+        </div>
+      </main>
+    </div>
+    <!-- Barre des tâches persistante et horloge locale. -->
+    <footer class="taskbar">
+      <button class="start-button" type="button" aria-expanded="false" aria-controls="start-menu">
+        <img src="windows-xp-logo.png" alt="" width="27" height="27">
+        démarrer
+      </button>
+      <div class="task-item">
+        <span aria-hidden="true">
+          ▣
+        </span>
+        Expérience
+      </div>
+      <div class="task-spacer">
+      </div>
+      <span class="tray" id="clock" aria-label="Heure actuelle">
+      </span>
+    </footer>
+    <!-- Navigation secondaire ouverte par le bouton Démarrer. -->
+    <div class="start-menu" id="start-menu" hidden>
+      <div class="start-head">
+        Anir Hamdaoui
+      </div>
+      <a href="index.html">
+        ⌂ &nbsp; Accueil
+      </a>
+      <a href="experience.html">
+        ▣ &nbsp; Expérience
+      </a>
+      <a href="projets.html">
+        ★ &nbsp; Projets
+      </a>
+      <div class="start-foot">
+        <a href="mailto:anirhamdaouii@gmail.com">
+          ✉ &nbsp; Me contacter
+        </a>
+      </div>
+    </div>
+    <script src="app.js" defer>
+    </script>
+  </body>
+</html>
+
