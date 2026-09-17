@@ -8,5 +8,4 @@ Portfolio personnel en français, inspiré de l'interface Windows XP. Les trois 
 - Expérience : parcours technique et professionnel.
 - Projets : Halma, UQAM Course Monitor et RentIA.
 
-Le site est statique et ne demande aucune installation. Les fichiers publiés sont dans `dist/`. Le contenu provient du CV fourni par Anir Hamdaoui.
-
+Le site est statique et ne demande aucune installation. Ouvrez `index.html` pour l'utiliser localement. Le contenu provient du CV fourni par Anir Hamdaoui.
