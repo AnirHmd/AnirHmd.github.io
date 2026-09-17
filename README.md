@@ -1,12 +1,12 @@
-# QR Musique
+# Portfolio d'Anir Hamdaoui
 
-Une page web qui affiche un code QR vers une musique YouTube. La sélection et le code changent automatiquement toutes les 30 secondes. Le minuteur est synchronisé sur l'heure UTC, de sorte que les visiteurs voient la même musique au même moment.
+Portfolio personnel en français, inspiré de l'interface Windows XP. Les trois pages présentent le profil, les compétences, les langues et la formation, puis les expériences et les projets d'Anir Hamdaoui.
 
-## Utilisation
+## Pages
 
-Ouvrez la page avec un navigateur ou un serveur statique. Scannez le code QR ou utilisez le bouton **Ouvrir sur YouTube**.
+- Accueil : présentation, coordonnées, compétences, langues et formation.
+- Expérience : parcours technique et professionnel.
+- Projets : Halma, UQAM Course Monitor et RentIA.
 
-## Catalogue
-
-Les musiques sont définies dans le tableau `songs` de `index.html`. Ajoutez des vidéos YouTube avec leur titre, artiste, genre et identifiant pour élargir la sélection. Le site n'utilise pas l'API YouTube ni de clé API. L'image du code QR est générée par l'API publique `api.qrserver.com` ; si elle ne charge pas, le lien YouTube reste disponible.
+Le site est statique et ne demande aucune installation. Les fichiers publiés sont dans `dist/`. Le contenu provient du CV fourni par Anir Hamdaoui.
 
