@@ -129,7 +129,8 @@ body:before {
   gap: 3px;
 }
 
-.window-buttons i {
+.window-buttons i,
+.close-button {
   font: 700 16px Arial;
   width: 23px;
   height: 22px;
@@ -140,10 +141,17 @@ body:before {
   font-style: normal;
   line-height: 18px;
   box-shadow: inset 1px 1px #c5dbfc;
+  color: white;
 }
 
-.window-buttons i:last-child {
+.close-button {
   background: linear-gradient(#f5a089,#c8412a);
+  cursor: pointer;
+  padding: 0;
+}
+
+.close-button:hover {
+  filter: brightness(1.15);
 }
 
 .address-bar {
