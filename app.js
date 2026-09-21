@@ -3,6 +3,43 @@ const clock = document.getElementById('clock');
 const startButton = document.querySelector('.start-button');
 const startMenu = document.getElementById('start-menu');
 const updateScreen = document.getElementById('xp-update-screen');
+const themeButtons = document.querySelectorAll('[data-theme-toggle]');
+
+// Conserve le thème choisi lors de la navigation entre les pages.
+function readNightPreference() {
+  try {
+    return localStorage.getItem('portfolio-theme') === 'night';
+  } catch {
+    return false;
+  }
+}
+
+function applyTheme(useNightMode, persist = false) {
+  document.body.classList.toggle('night-mode', useNightMode);
+  document.documentElement.style.colorScheme = useNightMode ? 'dark' : 'light';
+
+  themeButtons.forEach(button => {
+    button.setAttribute('aria-pressed', String(useNightMode));
+    button.querySelector('.night-icon').textContent = useNightMode ? '☀' : '☾';
+    button.querySelector('.theme-label').textContent = useNightMode ? 'Mode jour' : 'Mode nuit';
+  });
+
+  if (persist) {
+    try {
+      localStorage.setItem('portfolio-theme', useNightMode ? 'night' : 'day');
+    } catch {
+      // Le thème fonctionne même si le stockage local est désactivé.
+    }
+  }
+}
+
+applyTheme(readNightPreference());
+
+themeButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    applyTheme(!document.body.classList.contains('night-mode'), true);
+  });
+});
 
 // Affiche l'heure locale en direct dans la zone de notification.
 function updateClock() {

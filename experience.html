@@ -187,10 +187,16 @@
       </div>
       <div class="start-foot">
         <span class="start-foot-hint">Windows XP Professionnel</span>
-        <button class="power-button" type="button" data-shutdown>
-          <span class="power-icon" aria-hidden="true">⏻</span>
-          Arrêter l'ordinateur
-        </button>
+        <div class="start-actions">
+          <button class="night-mode-button" type="button" data-theme-toggle aria-pressed="false">
+            <span class="night-icon" aria-hidden="true">☾</span>
+            <span class="theme-label">Mode nuit</span>
+          </button>
+          <button class="power-button" type="button" data-shutdown>
+            <span class="power-icon" aria-hidden="true">⏻</span>
+            Arrêter
+          </button>
+        </div>
       </div>
     </div>
     <!-- Écran volontairement infini déclenché par Arrêter. -->
@@ -208,5 +214,4 @@
     </script>
   </body>
 </html>
-
 

@@ -936,3 +936,229 @@ body.is-updating{overflow:hidden}
 @media(max-width:460px){.start-menu-columns{grid-template-columns:1fr}.start-secondary{display:none!important}.start-foot-hint{display:none}.start-foot{justify-content:flex-end}}
 @media(prefers-reduced-motion:reduce){.expandable-card,.card-details,.toggle-cue b{transition:none}}
 
+/* Les projets reprennent la lecture verticale de la page Expérience. */
+body[data-page="projets"] .project-grid {
+  grid-template-columns: 1fr;
+}
+
+body[data-page="projets"] .project-card,
+body[data-page="projets"] .project-card:last-child,
+body[data-page="projets"] .project-card.is-open {
+  grid-column: auto;
+}
+
+body[data-page="projets"] .project-summary {
+  grid-template-columns: 165px minmax(0,1fr);
+}
+
+body[data-page="projets"] .project-summary .project-illustration {
+  width: 165px;
+  height: 145px;
+}
+
+/* Les commandes Nuit et Arrêter restent côte à côte. */
+.start-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.night-mode-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font: 12px Tahoma,sans-serif;
+  cursor: pointer;
+}
+
+.night-mode-button:hover {
+  background: #ffffff20;
+}
+
+.night-icon {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background: linear-gradient(#65758e,#273142);
+  box-shadow: inset 1px 1px #aeb9c9;
+  font-size: 18px;
+}
+
+/* Thème nuit gris rétro, appliqué à toutes les pages. */
+body.night-mode {
+  color: #d8dee8;
+  background-image: linear-gradient(#05081233,#05081233),url("night-wallpaper.jpg");
+}
+
+body.night-mode .window {
+  background: #222730;
+  border-color: #5e6879;
+  box-shadow: 0 16px 42px #000b,0 0 0 1px #9aa4b2;
+}
+
+body.night-mode .titlebar,
+body.night-mode .taskbar,
+body.night-mode .start-head,
+body.night-mode .start-foot {
+  background: linear-gradient(#5b6471,#353c47 48%,#20252d);
+}
+
+body.night-mode .start-button {
+  background: linear-gradient(#596760,#34453e 48%,#26352f);
+  box-shadow: inset 0 1px #8da095,2px 0 4px #111;
+}
+
+body.night-mode .task-item {
+  background: #454d59;
+  border-color: #768190;
+  box-shadow: inset 0 1px #8e99a7;
+}
+
+body.night-mode .tray {
+  background: linear-gradient(#596573,#303844);
+  border-left-color: #8993a1;
+}
+
+body.night-mode .address-bar {
+  background: #343a43;
+  border-bottom-color: #161a20;
+  color: #bdc5d1;
+}
+
+body.night-mode .address-bar div {
+  background: #1d2229;
+  border-color: #697382;
+  color: #dbe1e9;
+}
+
+body.night-mode .window-body {
+  background: linear-gradient(#272d36,#1c2128);
+}
+
+body.night-mode .xp-banner {
+  background: linear-gradient(120deg,#202631,#3c4552 68%,#697383);
+}
+
+body.night-mode .panel,
+body.night-mode .experience-card,
+body.night-mode .project-card {
+  background: #2b313a;
+  border-color: #596474;
+  box-shadow: 0 3px 8px #0006;
+}
+
+body.night-mode .panel h2 {
+  background: linear-gradient(#414a57,#303740);
+  border-bottom-color: #596474;
+  color: #a9c9f7;
+}
+
+body.night-mode .skills strong,
+body.night-mode .card-title,
+body.night-mode .experience-card h2,
+body.night-mode .project-card h2,
+body.night-mode .page-heading h1 {
+  color: #c7dbfb;
+}
+
+body.night-mode .company,
+body.night-mode .page-heading p,
+body.night-mode .timeline span,
+body.night-mode .timeline small,
+body.night-mode .details dt,
+body.night-mode .project-subtitle {
+  color: #aeb9c8;
+}
+
+body.night-mode .page-heading {
+  border-bottom-color: #505b69;
+}
+
+body.night-mode .page-mark,
+body.night-mode .contact-line .contact-icon {
+  background: linear-gradient(#46505e,#2e353e);
+  border-color: #687688;
+  color: #b8d5ff;
+  box-shadow: inset 1px 1px #596676;
+}
+
+body.night-mode .tag-row span,
+body.night-mode .languages span,
+body.night-mode .date-tag {
+  background: #343d49;
+  border-color: #657286;
+  color: #bdd5f8;
+}
+
+body.night-mode .details a,
+body.night-mode .panel a,
+body.night-mode .toggle-cue,
+body.night-mode .type-tag {
+  color: #8bbcff;
+}
+
+body.night-mode .statusbar {
+  background: #242a31;
+  border-top-color: #4b5561;
+  color: #aeb8c5;
+}
+
+body.night-mode .start-menu {
+  border-color: #697587;
+  box-shadow: 5px -5px 22px #000a;
+}
+
+body.night-mode .start-menu-columns {
+  background: #262c34;
+}
+
+body.night-mode .start-primary a,
+body.night-mode .start-secondary a {
+  color: #dbe2ec;
+}
+
+body.night-mode .start-primary small {
+  color: #a8b2c0;
+}
+
+body.night-mode .start-secondary {
+  background: #343b45;
+  border-left-color: #5f6b7b;
+}
+
+body.night-mode .start-primary a:hover,
+body.night-mode .start-secondary a:hover {
+  background: #566273;
+}
+
+@media(max-width:680px) {
+  body[data-page="projets"] .project-summary {
+    grid-template-columns: 105px minmax(0,1fr);
+  }
+
+  body[data-page="projets"] .project-summary .project-illustration {
+    width: 105px;
+    height: 100%;
+  }
+}
+
+@media(max-width:460px) {
+  .start-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .night-mode-button,
+  .power-button {
+    font-size: 11px;
+    padding-inline: 5px;
+  }
+}
+
