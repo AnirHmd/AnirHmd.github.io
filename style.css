@@ -868,3 +868,71 @@ a:focus-visible,button:focus-visible {
     max-width: 260px;
   }
 }
+
+/* Commandes de fenêtre réellement interactives. */
+.window-control{width:23px;height:22px;display:grid;place-items:center;padding:0;border:1px solid #d9e5fd;border-radius:4px;background:linear-gradient(#8bb9f5,#3364c5);color:#fff;box-shadow:inset 1px 1px #c5dbfc;font:700 16px/1 Arial,sans-serif}
+.close-button{background:linear-gradient(135deg,#ffb19c 0%,#e4583e 42%,#b92d1c 100%);cursor:pointer;text-shadow:1px 1px #7d1e12}
+.close-button:hover{filter:brightness(1.13)}
+.close-button:active{transform:translateY(1px)}
+
+/* Cartes repliables avec une animation proche d'une fenêtre XP. */
+.expandable-card{transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+.expandable-card.is-open{transform:scale(1.012);border-color:#246bcb;box-shadow:0 12px 26px #174b8940,0 0 0 2px #79aef0}
+.card-summary{width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:0;border:0;background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.summary-copy,.summary-meta,.project-preview{display:flex;flex-direction:column}
+.summary-copy{min-width:0}.summary-meta{flex:0 0 auto;align-items:flex-end;gap:10px}
+.card-title{margin:7px 0 5px;color:#173e7b;font-size:21px;line-height:1.2}
+.toggle-cue{color:#1c5eaf;font-size:11px;font-weight:bold;white-space:nowrap}
+.toggle-cue b{display:inline-block;margin-left:3px;font-size:16px;transition:transform .28s ease}
+.is-open .toggle-cue b{transform:rotate(180deg)}
+.card-details{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .36s ease,opacity .24s ease}
+.card-details-inner{min-height:0;overflow:hidden}
+.is-open .card-details{grid-template-rows:1fr;opacity:1}
+.experience-card .card-details-inner{padding-top:0;transition:padding-top .3s ease}
+.experience-card.is-open .card-details-inner{padding-top:4px}
+.project-card{transition:transform .28s ease,box-shadow .28s ease}
+.project-card.is-open{grid-column:1/-1}
+.project-summary{display:grid;grid-template-columns:145px minmax(0,1fr);align-items:stretch}
+.project-summary .project-illustration{width:145px;height:145px}
+.project-preview{justify-content:center;padding:20px}
+.project-preview .project-subtitle{margin-bottom:14px}
+.project-preview .toggle-cue{margin-top:auto}
+.project-details{padding:0 22px 22px}
+.project-details p{line-height:1.65;margin:0}
+
+/* Menu Démarrer à deux colonnes, comme Windows XP. */
+.start-menu{width:min(430px,calc(100vw - 12px));color:#173664}
+.start-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:2px solid #f5a54a}
+.start-head img{width:52px;height:52px;object-fit:cover;object-position:53% 30%;border:2px solid #fff;border-radius:5px;box-shadow:1px 2px 4px #17427f}
+.start-head div{display:grid;gap:3px}.start-head strong{color:#fff;font-size:18px;text-shadow:1px 1px #173c85}.start-head span{color:#dceaff;font-size:11px}
+.start-menu-columns{display:grid;grid-template-columns:58% 42%;min-height:275px;background:#fff}
+.start-menu nav{display:flex;flex-direction:column;padding:8px}
+.start-menu a{text-decoration:none}
+.start-primary a{display:grid;grid-template-columns:42px minmax(0,1fr);align-items:center;gap:8px;padding:8px 6px;color:#1d3559;border-radius:3px}
+.start-primary a:hover,.start-secondary a:hover{background:#2e72d2;color:#fff}
+.start-primary .start-icon{font-size:27px;text-align:center}
+.start-primary a>span:last-child{display:grid;gap:3px}
+.start-primary small{color:#78879b;font-size:10px}.start-primary a:hover small{color:#eaf3ff}
+.start-secondary{border-left:1px solid #9ebee8;background:#d9e9fb}
+.start-secondary a{display:flex;align-items:center;gap:8px;padding:11px 7px;color:#1c4378;border-radius:3px;font-size:12px;font-weight:bold}
+.start-foot{min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 10px;border-top:2px solid #efaa4e;background:linear-gradient(#3e89e7,#1857bd)}
+.start-foot-hint{color:#dbeaff;font-size:10px}
+.power-button{display:flex;align-items:center;gap:6px;padding:5px 8px;border:0;background:transparent;color:#fff;font:12px Tahoma,sans-serif;cursor:pointer}
+.power-button:hover{background:#ffffff20}
+.power-icon{width:26px;height:26px;display:grid;place-items:center;border:1px solid #fff;border-radius:5px;background:linear-gradient(#ff9c57,#d94a18);box-shadow:inset 1px 1px #ffc09a;font-size:19px}
+.tray{min-width:96px;padding:0 10px;font-variant-numeric:tabular-nums}
+
+/* Écran de mise à jour infini après l'arrêt. */
+.xp-update-screen{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:24px;background:#003399;color:#fff;text-align:center}
+.xp-update-screen[hidden]{display:none}.update-panel{width:min(520px,100%)}
+.update-panel img{width:92px;height:92px;object-fit:contain}.update-brand{margin:4px 0 38px;font:18px Arial,sans-serif}.update-brand strong{color:#f06b22;font-size:28px;font-style:italic}
+.update-panel h2{margin:0 0 12px;font-size:24px;font-weight:normal}
+.update-progress{width:min(320px,80vw);height:18px;margin:25px auto;overflow:hidden;border:2px solid #fff;background:#001d68}
+.update-progress span{width:34%;height:100%;display:block;background:repeating-linear-gradient(90deg,#49c126 0 14px,#82e44f 14px 18px);animation:xp-update 1.4s linear infinite}
+@keyframes xp-update{from{transform:translateX(-110%)}to{transform:translateX(300%)}}
+body.is-updating{overflow:hidden}
+
+@media(max-width:680px){.card-summary{display:grid}.summary-meta{align-items:flex-start}.project-summary{grid-template-columns:105px minmax(0,1fr)}.project-summary .project-illustration{width:105px;height:100%;min-height:145px}.project-glyph{font-size:48px}}
+@media(max-width:460px){.start-menu-columns{grid-template-columns:1fr}.start-secondary{display:none!important}.start-foot-hint{display:none}.start-foot{justify-content:flex-end}}
+@media(prefers-reduced-motion:reduce){.expandable-card,.card-details,.toggle-cue b{transition:none}}
+

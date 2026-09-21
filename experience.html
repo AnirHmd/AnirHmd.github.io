@@ -49,12 +49,11 @@
                     <span class="title">
             Experience — Anir Hamdaoui
           </span>
-          <span class="window-buttons">
-            <i>_</i>
-            <i>□</i>
-            <i>X</i>
-          </span>
-          
+          <div class="window-buttons" aria-label="Commandes de la fenêtre">
+            <span class="window-control" aria-hidden="true">_</span>
+            <span class="window-control" aria-hidden="true">□</span>
+            <button class="window-control close-button" type="button" aria-label="Fermer le site">×</button>
+          </div>
         </div>
         <div class="address-bar">
           <span>
@@ -86,162 +85,53 @@
           </div>
           <!-- Expériences techniques et professionnelles. -->
           <div class="experience-list">
-            <article class="experience-card">
-              <div class="experience-top">
-                <div>
-                  <span class="type-tag">
-                    Analyse TI · BI
-                  </span>
-                  <h2>
-                    Stagiaire analyste TI
-                  </h2>
-                  <p class="company">
-                    Ville de Montréal · Montréal, QC
-                  </p>
+            <article class="experience-card expandable-card">
+              <button class="card-summary" type="button" data-expand-card aria-expanded="false">
+                <span class="summary-copy"><span class="type-tag">Analyse TI · BI</span><strong class="card-title">Stagiaire analyste TI</strong><span class="company">Ville de Montréal · Montréal, QC</span></span>
+                <span class="summary-meta"><span class="date-tag">Janvier — Août 2026</span><span class="toggle-cue">Plus d'informations <b aria-hidden="true">⌄</b></span></span>
+              </button>
+              <div class="card-details">
+                <div class="card-details-inner">
+                  <ul>
+                    <li>Développement de scripts Power Query (M) reliant Omnissa Intelligence aux outils Microsoft et configuration de Power BI Service pour l'actualisation continue des données.</li>
+                    <li>Conception de tableaux de bord DAX pour plus de <strong>30 000 appareils</strong> : migration Windows 11, audits BIOS/UEFI et cycle de vie des flottes iOS et Android.</li>
+                    <li>Structuration de l'inventaire dans Workspace ONE avec Smart Groups, orchestration des déploiements par vagues et automatisation PowerShell (remédiation WMIC).</li>
+                    <li>Traduction des besoins de la Ville de Montréal et du SPVM en indicateurs décisionnels, avec documentation technique dans Jira.</li>
+                  </ul>
+                  <div class="tag-row"><span>Power BI</span><span>Power Query</span><span>DAX</span><span>Workspace ONE</span><span>PowerShell</span></div>
                 </div>
-                <span class="date-tag">
-                  Janvier — Août 2026
-                </span>
-              </div>
-              <ul>
-                <li>
-                  Développement de scripts Power Query (M) reliant Omnissa Intelligence aux outils Microsoft et configuration de Power BI Service pour l'actualisation continue des données.
-                </li>
-                <li>
-                  Conception de tableaux de bord DAX pour plus de
-                  <strong>
-                    30 000 appareils
-                  </strong>
-                  : migration Windows 11, audits BIOS/UEFI et cycle de vie des flottes iOS et Android.
-                </li>
-                <li>
-                  Structuration de l'inventaire dans Workspace ONE avec Smart Groups, orchestration des déploiements par vagues et automatisation PowerShell (remédiation WMIC).
-                </li>
-                <li>
-                  Traduction des besoins de la Ville de Montréal et du SPVM en indicateurs décisionnels, avec documentation technique dans Jira.
-                </li>
-              </ul>
-              <div class="tag-row">
-                <span>
-                  Power BI
-                </span>
-                <span>
-                  Power Query
-                </span>
-                <span>
-                  DAX
-                </span>
-                <span>
-                  Workspace ONE
-                </span>
-                <span>
-                  PowerShell
-                </span>
               </div>
             </article>
-            <article class="experience-card">
-              <div class="experience-top">
-                <div>
-                  <span class="type-tag">
-                    Développement logiciel
-                  </span>
-                  <h2>
-                    Stagiaire en développement logiciel
-                  </h2>
-                  <p class="company">
-                    K-Dev Algeria · Bejaïa, Algérie
-                  </p>
-                </div>
-                <span class="date-tag">
-                  Mai — Septembre 2022
-                </span>
-              </div>
-              <ul>
-                <li>
-                  Développement et intégration d'un CRM en Java, Spring Boot et MySQL connecté à des API internes.
-                </li>
-                <li>
-                  Conception orientée objet et rédaction de documentation technique pour faciliter la maintenance.
-                </li>
-                <li>
-                  Collaboration en mode Agile Kanban avec gestion des versions sous Git.
-                </li>
-              </ul>
-              <div class="tag-row">
-                <span>
-                  Java
-                </span>
-                <span>
-                  Spring Boot
-                </span>
-                <span>
-                  MySQL
-                </span>
-                <span>
-                  Git
-                </span>
-                <span>
-                  Kanban
-                </span>
-              </div>
+            <article class="experience-card expandable-card">
+              <button class="card-summary" type="button" data-expand-card aria-expanded="false">
+                <span class="summary-copy"><span class="type-tag">Développement logiciel</span><strong class="card-title">Stagiaire en développement logiciel</strong><span class="company">K-Dev Algeria · Bejaïa, Algérie</span></span>
+                <span class="summary-meta"><span class="date-tag">Mai — Septembre 2022</span><span class="toggle-cue">Plus d'informations <b aria-hidden="true">⌄</b></span></span>
+              </button>
+              <div class="card-details"><div class="card-details-inner">
+                <ul>
+                  <li>Développement et intégration d'un CRM en Java, Spring Boot et MySQL connecté à des API internes.</li>
+                  <li>Conception orientée objet et rédaction de documentation technique pour faciliter la maintenance.</li>
+                  <li>Collaboration en mode Agile Kanban avec gestion des versions sous Git.</li>
+                </ul>
+                <div class="tag-row"><span>Java</span><span>Spring Boot</span><span>MySQL</span><span>Git</span><span>Kanban</span></div>
+              </div></div>
             </article>
-            <article class="experience-card">
-              <div class="experience-top">
-                <div>
-                  <span class="type-tag">
-                    Support & réseaux
-                  </span>
-                  <h2>
-                    Stagiaire en support technique et réseaux
-                  </h2>
-                  <p class="company">
-                    CMTD Hamdaoui · Bejaïa, Algérie
-                  </p>
-                </div>
-                <span class="date-tag">
-                  Juin — Octobre 2021
-                </span>
-              </div>
-              <ul>
-                <li>
-                  Diagnostic matériel et résolution de problèmes de connectivité réseau.
-                </li>
-                <li>
-                  Analyse de données commerciales et création de tableaux de bord de suivi avec Power BI.
-                </li>
-              </ul>
-              <div class="tag-row">
-                <span>
-                  Support TI
-                </span>
-                <span>
-                  Réseaux
-                </span>
-                <span>
-                  Power BI
-                </span>
-              </div>
+            <article class="experience-card expandable-card">
+              <button class="card-summary" type="button" data-expand-card aria-expanded="false">
+                <span class="summary-copy"><span class="type-tag">Support & réseaux</span><strong class="card-title">Stagiaire en support technique et réseaux</strong><span class="company">CMTD Hamdaoui · Bejaïa, Algérie</span></span>
+                <span class="summary-meta"><span class="date-tag">Juin — Octobre 2021</span><span class="toggle-cue">Plus d'informations <b aria-hidden="true">⌄</b></span></span>
+              </button>
+              <div class="card-details"><div class="card-details-inner">
+                <ul><li>Diagnostic matériel et résolution de problèmes de connectivité réseau.</li><li>Analyse de données commerciales et création de tableaux de bord de suivi avec Power BI.</li></ul>
+                <div class="tag-row"><span>Support TI</span><span>Réseaux</span><span>Power BI</span></div>
+              </div></div>
             </article>
-            <article class="experience-card compact">
-              <div class="experience-top">
-                <div>
-                  <span class="type-tag">
-                    Autres expériences
-                  </span>
-                  <h2>
-                    Vente & service client
-                  </h2>
-                  <p class="company">
-                    Best Buy (2026) · Access Research Inc (2024–2025) · Studio Seigneurie (2017–2023)
-                  </p>
-                </div>
-                <span class="date-tag">
-                  2017 — présent
-                </span>
-              </div>
-              <p>
-                Expériences qui ont renforcé ma relation client, mon adaptation rapide et ma communication bilingue en milieu professionnel.
-              </p>
+            <article class="experience-card expandable-card compact">
+              <button class="card-summary" type="button" data-expand-card aria-expanded="false">
+                <span class="summary-copy"><span class="type-tag">Autres expériences</span><strong class="card-title">Vente & service client</strong><span class="company">Best Buy · Access Research Inc · Studio Seigneurie</span></span>
+                <span class="summary-meta"><span class="date-tag">2017 — présent</span><span class="toggle-cue">Plus d'informations <b aria-hidden="true">⌄</b></span></span>
+              </button>
+              <div class="card-details"><div class="card-details-inner"><p>Ces expériences ont renforcé ma relation client, mon adaptation rapide et ma communication en français et en anglais dans un milieu professionnel.</p></div></div>
             </article>
           </div>
         </div>
@@ -273,27 +163,50 @@
       </span>
     </footer>
     <!-- Navigation secondaire ouverte par le bouton Démarrer. -->
+    <!-- Menu Démarrer inspiré de Windows XP. -->
     <div class="start-menu" id="start-menu" hidden>
       <div class="start-head">
-        Anir Hamdaoui
+        <img src="portrait.jpg" alt="Portrait d'Anir Hamdaoui" width="52" height="52">
+        <div>
+          <strong>Anir Hamdaoui</strong>
+          <span>Portfolio personnel</span>
+        </div>
       </div>
-      <a href="index.html">
-        🏠 &nbsp; Accueil
-      </a>
-      <a href="experience.html">
-        💼 &nbsp; Expérience
-      </a>
-      <a href="projets.html">
-        💻 &nbsp; Projets
-      </a>
+      <div class="start-menu-columns">
+        <nav class="start-primary" aria-label="Pages du portfolio">
+          <a href="index.html"><span class="start-icon">🏠</span><span><strong>Accueil</strong><small>Profil et compétences</small></span></a>
+          <a href="experience.html"><span class="start-icon">💼</span><span><strong>Expérience</strong><small>Mon parcours professionnel</small></span></a>
+          <a href="projets.html"><span class="start-icon">💻</span><span><strong>Projets</strong><small>Mes réalisations</small></span></a>
+          <a href="mailto:anirhamdaouii@gmail.com"><span class="start-icon">📧</span><span><strong>Courriel</strong><small>Me contacter</small></span></a>
+        </nav>
+        <nav class="start-secondary" aria-label="Liens personnels">
+          <a href="https://github.com/AnirHmd" target="_blank" rel="noopener noreferrer">⌨️ <span>Mon GitHub</span></a>
+          <a href="https://linkedin.com/in/anirhamdaoui" target="_blank" rel="noopener noreferrer">🤝 <span>Mon LinkedIn</span></a>
+          <a href="index.html#main-content">📄 <span>Mon profil</span></a>
+        </nav>
+      </div>
       <div class="start-foot">
-        <a href="mailto:anirhamdaouii@gmail.com">
-          📧 &nbsp; Me contacter
-        </a>
+        <span class="start-foot-hint">Windows XP Professionnel</span>
+        <button class="power-button" type="button" data-shutdown>
+          <span class="power-icon" aria-hidden="true">⏻</span>
+          Arrêter l'ordinateur
+        </button>
+      </div>
+    </div>
+    <!-- Écran volontairement infini déclenché par Arrêter. -->
+    <div class="xp-update-screen" id="xp-update-screen" hidden role="dialog" aria-modal="true" aria-labelledby="update-title">
+      <div class="update-panel">
+        <img src="windows-xp-logo.png" alt="" width="92" height="92">
+        <p class="update-brand">Microsoft Windows <strong>xp</strong></p>
+        <h2 id="update-title">Installation des mises à jour...</h2>
+        <p>Veuillez patienter pendant que Windows installe les mises à jour.</p>
+        <div class="update-progress" aria-label="Installation en cours"><span></span></div>
+        <small>N'éteignez pas votre ordinateur.</small>
       </div>
     </div>
     <script src="app.js" defer>
     </script>
   </body>
 </html>
+
 

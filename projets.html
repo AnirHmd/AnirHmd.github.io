@@ -49,12 +49,11 @@
                     <span class="title">
             Projets — Anir Hamdaoui
           </span>
-          <span class="window-buttons">
-            <i>_</i>
-            <i>□</i>
-            <i>X</i>
-          </span>
-          
+          <div class="window-buttons" aria-label="Commandes de la fenêtre">
+            <span class="window-control" aria-hidden="true">_</span>
+            <span class="window-control" aria-hidden="true">□</span>
+            <button class="window-control close-button" type="button" aria-label="Fermer le site">×</button>
+          </div>
         </div>
         <div class="address-bar">
           <span>
@@ -86,113 +85,26 @@
           </div>
           <!-- Projets tirés du CV. -->
           <div class="project-grid">
-            <article class="project-card">
-              <div class="project-illustration halma" aria-hidden="true">
-                <span class="project-glyph">
-                  🎮
-                </span>
-              </div>
-              <div class="project-content">
-                <span class="type-tag">
-                  Projet universitaire · UQÀM
-                </span>
-                <h2>
-                  Halma
-                </h2>
-                <p class="project-subtitle">
-                  Jeu de plateau avec intelligences artificielles
-                </p>
-                <p>
-                  Architecture orientée objet en Java avec plusieurs profils d'IA, dont des stratégies triées et pseudo-aléatoires. Intégration continue avec GitLab CI/CD et Maven, tests unitaires et d'intégration, couverture JaCoCo et documentation Javadoc.
-                </p>
-                <div class="tag-row">
-                  <span>
-                    Java
-                  </span>
-                  <span>
-                    IA
-                  </span>
-                  <span>
-                    GitLab CI/CD
-                  </span>
-                  <span>
-                    Maven
-                  </span>
-                  <span>
-                    JaCoCo
-                  </span>
-                </div>
-              </div>
+            <article class="project-card expandable-card">
+              <button class="card-summary project-summary" type="button" data-expand-card aria-expanded="false">
+                <span class="project-illustration halma" aria-hidden="true"><span class="project-glyph">🎮</span></span>
+                <span class="project-preview"><span class="type-tag">Projet universitaire · UQÀM</span><strong class="card-title">Halma</strong><span class="project-subtitle">Jeu de plateau avec intelligences artificielles</span><span class="toggle-cue">Voir les détails <b aria-hidden="true">⌄</b></span></span>
+              </button>
+              <div class="card-details"><div class="card-details-inner project-details"><p>Architecture orientée objet en Java avec plusieurs profils d'IA, dont des stratégies triées et pseudo-aléatoires. Intégration continue avec GitLab CI/CD et Maven, tests unitaires et d'intégration, couverture JaCoCo et documentation Javadoc.</p><div class="tag-row"><span>Java</span><span>IA</span><span>GitLab CI/CD</span><span>Maven</span><span>JaCoCo</span></div></div></div>
             </article>
-            <article class="project-card">
-              <div class="project-illustration monitor" aria-hidden="true">
-                <span class="project-glyph">
-                  &gt;_
-                </span>
-              </div>
-              <div class="project-content">
-                <span class="type-tag">
-                  Projet personnel · Automatisation
-                </span>
-                <h2>
-                  UQAM Course Monitor
-                </h2>
-                <p class="project-subtitle">
-                  Surveillance des places disponibles dans les cours
-                </p>
-                <p>
-                  Script Python qui interroge l'API AJAX de l'UQAM pour détecter les places libres. Exécution automatisée 24 h/24 avec GitHub Actions et envoi d'alertes instantanées par courriel via SMTP.
-                </p>
-                <div class="tag-row">
-                  <span>
-                    Python
-                  </span>
-                  <span>
-                    API AJAX
-                  </span>
-                  <span>
-                    GitHub Actions
-                  </span>
-                  <span>
-                    SMTP
-                  </span>
-                </div>
-              </div>
+            <article class="project-card expandable-card">
+              <button class="card-summary project-summary" type="button" data-expand-card aria-expanded="false">
+                <span class="project-illustration monitor" aria-hidden="true"><span class="project-glyph">&gt;_</span></span>
+                <span class="project-preview"><span class="type-tag">Projet personnel · Automatisation</span><strong class="card-title">UQAM Course Monitor</strong><span class="project-subtitle">Surveillance des places disponibles</span><span class="toggle-cue">Voir les détails <b aria-hidden="true">⌄</b></span></span>
+              </button>
+              <div class="card-details"><div class="card-details-inner project-details"><p>Script Python qui interroge l'API AJAX de l'UQAM pour détecter les places libres. Exécution automatisée 24 h/24 avec GitHub Actions et envoi d'alertes instantanées par courriel via SMTP.</p><div class="tag-row"><span>Python</span><span>API AJAX</span><span>GitHub Actions</span><span>SMTP</span></div></div></div>
             </article>
-            <article class="project-card">
-              <div class="project-illustration rentia" aria-hidden="true">
-                <span class="project-glyph">
-                  🏢
-                </span>
-              </div>
-              <div class="project-content">
-                <span class="type-tag">
-                  Projet personnel · En développement
-                </span>
-                <h2>
-                  RentIA
-                </h2>
-                <p class="project-subtitle">
-                  Plateforme intelligente de gestion locative
-                </p>
-                <p>
-                  Conception de l'architecture et modélisation des processus liés aux baux, requêtes et travaux de maintenance. Spécifications techniques et prototype préparant l'intégration de modules d'IA pour automatiser les suivis.
-                </p>
-                <div class="tag-row">
-                  <span>
-                    SaaS
-                  </span>
-                  <span>
-                    Architecture
-                  </span>
-                  <span>
-                    Analyse d'affaires
-                  </span>
-                  <span>
-                    IA
-                  </span>
-                </div>
-              </div>
+            <article class="project-card expandable-card">
+              <button class="card-summary project-summary" type="button" data-expand-card aria-expanded="false">
+                <span class="project-illustration rentia" aria-hidden="true"><span class="project-glyph">🏢</span></span>
+                <span class="project-preview"><span class="type-tag">Projet personnel · En développement</span><strong class="card-title">RentIA</strong><span class="project-subtitle">Plateforme intelligente de gestion locative</span><span class="toggle-cue">Voir les détails <b aria-hidden="true">⌄</b></span></span>
+              </button>
+              <div class="card-details"><div class="card-details-inner project-details"><p>Conception de l'architecture et modélisation des processus liés aux baux, requêtes et travaux de maintenance. Spécifications techniques et prototype préparant l'intégration de modules d'IA pour automatiser les suivis.</p><div class="tag-row"><span>SaaS</span><span>Architecture</span><span>Analyse d'affaires</span><span>IA</span></div></div></div>
             </article>
           </div>
         </div>
@@ -224,27 +136,50 @@
       </span>
     </footer>
     <!-- Navigation secondaire ouverte par le bouton Démarrer. -->
+    <!-- Menu Démarrer inspiré de Windows XP. -->
     <div class="start-menu" id="start-menu" hidden>
       <div class="start-head">
-        Anir Hamdaoui
+        <img src="portrait.jpg" alt="Portrait d'Anir Hamdaoui" width="52" height="52">
+        <div>
+          <strong>Anir Hamdaoui</strong>
+          <span>Portfolio personnel</span>
+        </div>
       </div>
-      <a href="index.html">
-        🏠 &nbsp; Accueil
-      </a>
-      <a href="experience.html">
-        💼 &nbsp; Expérience
-      </a>
-      <a href="projets.html">
-        💻 &nbsp; Projets
-      </a>
+      <div class="start-menu-columns">
+        <nav class="start-primary" aria-label="Pages du portfolio">
+          <a href="index.html"><span class="start-icon">🏠</span><span><strong>Accueil</strong><small>Profil et compétences</small></span></a>
+          <a href="experience.html"><span class="start-icon">💼</span><span><strong>Expérience</strong><small>Mon parcours professionnel</small></span></a>
+          <a href="projets.html"><span class="start-icon">💻</span><span><strong>Projets</strong><small>Mes réalisations</small></span></a>
+          <a href="mailto:anirhamdaouii@gmail.com"><span class="start-icon">📧</span><span><strong>Courriel</strong><small>Me contacter</small></span></a>
+        </nav>
+        <nav class="start-secondary" aria-label="Liens personnels">
+          <a href="https://github.com/AnirHmd" target="_blank" rel="noopener noreferrer">⌨️ <span>Mon GitHub</span></a>
+          <a href="https://linkedin.com/in/anirhamdaoui" target="_blank" rel="noopener noreferrer">🤝 <span>Mon LinkedIn</span></a>
+          <a href="index.html#main-content">📄 <span>Mon profil</span></a>
+        </nav>
+      </div>
       <div class="start-foot">
-        <a href="mailto:anirhamdaouii@gmail.com">
-          📧 &nbsp; Me contacter
-        </a>
+        <span class="start-foot-hint">Windows XP Professionnel</span>
+        <button class="power-button" type="button" data-shutdown>
+          <span class="power-icon" aria-hidden="true">⏻</span>
+          Arrêter l'ordinateur
+        </button>
+      </div>
+    </div>
+    <!-- Écran volontairement infini déclenché par Arrêter. -->
+    <div class="xp-update-screen" id="xp-update-screen" hidden role="dialog" aria-modal="true" aria-labelledby="update-title">
+      <div class="update-panel">
+        <img src="windows-xp-logo.png" alt="" width="92" height="92">
+        <p class="update-brand">Microsoft Windows <strong>xp</strong></p>
+        <h2 id="update-title">Installation des mises à jour...</h2>
+        <p>Veuillez patienter pendant que Windows installe les mises à jour.</p>
+        <div class="update-progress" aria-label="Installation en cours"><span></span></div>
+        <small>N'éteignez pas votre ordinateur.</small>
       </div>
     </div>
     <script src="app.js" defer>
     </script>
   </body>
 </html>
+
 
