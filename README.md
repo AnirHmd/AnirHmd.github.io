@@ -1,6 +1,6 @@
 # Portfolio d'Anir Hamdaoui
 
-Portfolio personnel en français, inspiré de l'interface Windows XP. Les trois pages présentent le profil, les compétences, les langues et la formation, puis les expériences et les projets.
+Portfolio personnel inspiré de Windows XP, disponible en français et en anglais. Les trois pages présentent le profil, les expériences et les projets.
 
 ## Pages
 
@@ -8,11 +8,20 @@ Portfolio personnel en français, inspiré de l'interface Windows XP. Les trois 
 - Expérience
 - Projets
 
+## Fonctions interactives
+
+- Menu Démarrer avec mode nuit et choix de langue mémorisés dans le navigateur.
+- Paint : dessin à la souris ou au doigt, gomme, annulation, export PNG et partage vers une application de courriel lorsque l'appareil le permet.
+- Écran de veille après deux minutes d'inactivité.
+
+Le site est statique et ne demande aucune installation. Dans le dépôt GitHub, ouvrez `index.html` ; dans la copie de publication Sites, les fichiers sont dans `dist/`.
 
 ## Modifier le site
 
-- Les trois fichiers HTML contiennent chacun le contenu d'une page et des commentaires sur leurs grandes sections.
-- `style.css` regroupe l'apparence Windows XP, le recadrage de la photo (`.avatar img`) et les règles pour mobile.
-- `app.js` gère l'horloge et le menu Démarrer.
-- `portrait.jpg` et `windows-xp-logo.png` sont les images fournies pour le portfolio.
+- Les trois fichiers HTML contiennent le contenu des pages.
+- `style.css` regroupe l'apparence Windows XP et les règles pour mobile.
+- `translations.js` contient les textes anglais.
+- `app.js` gère l'horloge, la langue, le thème, le menu et les cartes.
+- `extras.js` gère Paint et l'écran de veille.
+- `portrait.jpg`, `windows-xp-logo.png`, `Fond portfolio.png` et `night-wallpaper.jpg` sont les images du portfolio.
 

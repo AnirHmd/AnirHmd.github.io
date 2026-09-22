@@ -1,4 +1,73 @@
 // Éléments communs aux trois pages du portfolio.
+function getLanguage() {
+  const queryLanguage = new URLSearchParams(window.location.search).get('lang');
+  if (queryLanguage === 'en' || queryLanguage === 'fr') return queryLanguage;
+  try {
+    return localStorage.getItem('portfolio-language') === 'en' ? 'en' : 'fr';
+  } catch {
+    return 'fr';
+  }
+}
+
+const language = getLanguage();
+window.portfolioLanguage = language;
+const translations = window.portfolioTranslations || {};
+
+// Traduit les nœuds texte sans toucher à la structure HTML des fiches.
+if (language === 'en') {
+  document.documentElement.lang = 'en';
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    const source = node.textContent.trim();
+    if (translations[source]) {
+      node.textContent = node.textContent.replace(source, translations[source]);
+    }
+  }
+
+  document.title = translations[document.title.trim()] || document.title;
+  document.querySelector('meta[name="description"]')?.setAttribute(
+    'content',
+    'Portfolio of Anir Hamdaoui — computer science, software engineering, and IT analysis.'
+  );
+  const accessibleLabels = {
+    'Navigation principale': 'Main navigation',
+    'Commandes de la fenêtre': 'Window controls',
+    'Fermer le site': 'Close website',
+    'Heure actuelle': 'Current time',
+    'Pages du portfolio': 'Portfolio pages',
+    'Liens personnels': 'Personal links',
+    'Installation en cours': 'Installation in progress',
+    "Portrait d'Anir Hamdaoui": 'Portrait of Anir Hamdaoui',
+  };
+  document.querySelectorAll('[aria-label],[alt]').forEach(element => {
+    for (const attribute of ['aria-label', 'alt']) {
+      const value = element.getAttribute(attribute);
+      if (accessibleLabels[value]) element.setAttribute(attribute, accessibleLabels[value]);
+    }
+  });
+}
+
+const languageButton = document.querySelector('[data-language-toggle]');
+if (languageButton) {
+  languageButton.querySelector('.language-label').textContent = language === 'en' ? 'Français' : 'English';
+  languageButton.setAttribute('aria-label', language === 'en' ? 'Passer en français' : 'Switch to English');
+  languageButton.addEventListener('click', () => {
+    const nextLanguage = language === 'en' ? 'fr' : 'en';
+    try {
+      localStorage.setItem('portfolio-language', nextLanguage);
+      const url = new URL(window.location.href);
+      url.searchParams.delete('lang');
+      window.location.assign(url);
+    } catch {
+      // Le paramètre d'URL permet de changer la langue sans stockage local.
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', nextLanguage);
+      window.location.assign(url);
+    }
+  });
+}
+
 const clock = document.getElementById('clock');
 const startButton = document.querySelector('.start-button');
 const startMenu = document.getElementById('start-menu');
@@ -21,7 +90,10 @@ function applyTheme(useNightMode, persist = false) {
   themeButtons.forEach(button => {
     button.setAttribute('aria-pressed', String(useNightMode));
     button.querySelector('.night-icon').textContent = useNightMode ? '☀' : '☾';
-    button.querySelector('.theme-label').textContent = useNightMode ? 'Mode jour' : 'Mode nuit';
+    button.querySelector('.theme-label').textContent =
+      language === 'en'
+        ? (useNightMode ? 'Day mode' : 'Night mode')
+        : (useNightMode ? 'Mode jour' : 'Mode nuit');
   });
 
   if (persist) {
@@ -45,10 +117,11 @@ themeButtons.forEach(button => {
 function updateClock() {
   if (!clock) return;
   const now = new Date();
-  clock.textContent = new Intl.DateTimeFormat('fr-CA', {
+  const locale = language === 'en' ? 'en-CA' : 'fr-CA';
+  clock.textContent = new Intl.DateTimeFormat(locale, {
     hour: '2-digit', minute: '2-digit', second: '2-digit',
   }).format(now);
-  clock.title = new Intl.DateTimeFormat('fr-CA', {
+  clock.title = new Intl.DateTimeFormat(locale, {
     dateStyle: 'full', timeStyle: 'long',
   }).format(now);
 }

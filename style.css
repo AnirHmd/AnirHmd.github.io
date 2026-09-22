@@ -1162,3 +1162,334 @@ body.night-mode .start-secondary a:hover {
   }
 }
 
+/* Raccourcis et fenêtre Paint. */
+.paint-shortcut {
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.icon-paint {
+  background: linear-gradient(#f8f6dd,#efdf9b);
+  border: 2px solid #fff8d7;
+  border-radius: 6px;
+  box-shadow: 0 4px #b18b55;
+}
+
+.start-paint-link {
+  display: grid;
+  grid-template-columns: 42px minmax(0,1fr);
+  align-items: center;
+  gap: 8px;
+  padding: 8px 6px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: #1d3559;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.start-paint-link:hover {
+  background: #2e72d2;
+  color: #fff;
+}
+
+.start-paint-link>span:last-child {
+  display: grid;
+  gap: 3px;
+}
+
+.start-paint-link small {
+  color: #78879b;
+  font-size: 10px;
+}
+
+.start-paint-link:hover small {
+  color: #eaf3ff;
+}
+
+.paint-window {
+  position: fixed;
+  z-index: 30;
+  top: 50%;
+  left: 50%;
+  width: min(760px,calc(100vw - 24px));
+  max-height: min(760px,calc(100vh - 56px));
+  display: flex;
+  flex-direction: column;
+  transform: translate(-50%,-50%);
+  border: 3px solid #1756c9;
+  border-radius: 9px 9px 4px 4px;
+  background: #ece9d8;
+  color: #24344a;
+  box-shadow: 0 20px 70px #071a3fb3;
+  overflow: hidden;
+}
+
+.paint-window[hidden],.screen-saver[hidden] {
+  display: none;
+}
+
+.paint-titlebar {
+  flex: none;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 6px 3px 10px;
+  background: linear-gradient(#5aa2fa,#1b59c7 65%,#073da9);
+  color: #fff;
+  text-shadow: 1px 1px #12316b;
+}
+
+.paint-titlebar strong {
+  flex: 1;
+}
+
+.paint-close {
+  width: 25px;
+  height: 24px;
+  border: 1px solid #ffd7ce;
+  border-radius: 4px;
+  background: linear-gradient(#f5a089,#c8412a);
+  color: #fff;
+  font: bold 18px Arial,sans-serif;
+  cursor: pointer;
+}
+
+.paint-toolbar,.paint-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 9px 11px;
+  background: #ece9d8;
+}
+
+.paint-toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+}
+
+.paint-toolbar input[type=color] {
+  width: 35px;
+  height: 29px;
+  padding: 2px;
+}
+
+.paint-toolbar input[type=range] {
+  width: 90px;
+}
+
+.paint-toolbar button,.paint-actions button {
+  min-height: 30px;
+  padding: 4px 9px;
+  border: 1px solid #8d9eae;
+  border-radius: 3px;
+  background: linear-gradient(#fff,#d9e1ec);
+  color: #253a59;
+  font: 12px Tahoma,sans-serif;
+  cursor: pointer;
+}
+
+.paint-toolbar button:hover,.paint-actions button:hover {
+  border-color: #246ac1;
+  background: linear-gradient(#fff,#c8dbf6);
+}
+
+.paint-eraser[aria-pressed=true] {
+  background: #bcd4f4;
+  border-color: #1855ae;
+}
+
+.paint-canvas-wrap {
+  min-height: 0;
+  overflow: auto;
+  padding: 10px;
+  background: #c6cad2;
+}
+
+.paint-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 3;
+  border: 1px solid #8d949f;
+  background: #fff;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.paint-footer {
+  justify-content: space-between;
+  border-top: 1px solid #a2acb8;
+}
+
+.paint-status {
+  flex: 1;
+  min-width: 180px;
+  font-size: 11px;
+}
+
+.paint-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.language-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 6px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font: 12px Tahoma,sans-serif;
+  cursor: pointer;
+}
+
+.language-button:hover {
+  background: #ffffff20;
+}
+
+.language-button span:first-child {
+  font-size: 21px;
+  line-height: 25px;
+}
+
+/* Trois actions occupent désormais toute la barre inférieure du menu. */
+.start-foot-hint {
+  display: none;
+}
+
+.start-foot {
+  justify-content: flex-end;
+}
+
+.start-actions {
+  white-space: nowrap;
+}
+
+/* Le bureau est masqué pendant l'écran de veille, qui se ferme au mouvement. */
+.screen-saver {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 20px;
+  padding: 24px;
+  background: radial-gradient(circle at 50% 40%,#294572,#07152c 60%,#030b18);
+  color: #f3f7ff;
+  text-align: center;
+}
+
+.screen-saver-mark {
+  display: grid;
+  justify-items: center;
+  gap: 5px;
+  animation: saver-float 7s ease-in-out infinite alternate;
+}
+
+.screen-saver-mark img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.screen-saver-mark strong {
+  font: bold italic clamp(32px,6vw,58px) Tahoma,sans-serif;
+  text-shadow: 0 3px 12px #0009;
+}
+
+.screen-saver-mark span {
+  color: #b6cce9;
+}
+
+.screen-saver>p {
+  position: absolute;
+  bottom: 26px;
+  margin: 0;
+  font-size: 12px;
+  color: #b6cce9;
+}
+
+@keyframes saver-float {
+  from { transform: translate(-24px,-12px); }
+  to { transform: translate(24px,18px); }
+}
+
+body.screen-saver-active {
+  overflow: hidden;
+}
+
+body.night-mode .paint-window {
+  background: #303740;
+  border-color: #697587;
+  color: #dbe2ec;
+}
+
+body.night-mode .paint-titlebar {
+  background: linear-gradient(#5b6471,#353c47 48%,#20252d);
+}
+
+body.night-mode .paint-toolbar,
+body.night-mode .paint-footer {
+  background: #303740;
+}
+
+body.night-mode .paint-canvas-wrap {
+  background: #1d232a;
+}
+
+body.night-mode .start-paint-link {
+  color: #dbe2ec;
+}
+
+body.night-mode .start-paint-link small {
+  color: #a8b2c0;
+}
+
+body.night-mode .start-paint-link:hover {
+  background: #566273;
+}
+
+@media(max-width:600px) {
+  .paint-window {
+    max-height: calc(100vh - 48px);
+  }
+  .paint-toolbar,.paint-footer {
+    gap: 5px;
+    padding: 6px;
+  }
+  .paint-status {
+    min-width: 100%;
+  }
+  .start-foot-hint {
+    display: none;
+  }
+}
+
+@media(max-width:380px) {
+  .start-actions {
+    gap: 0;
+  }
+  .language-button,.night-mode-button,.power-button {
+    padding-inline: 3px;
+    font-size: 10px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .screen-saver-mark {
+    animation: none;
+  }
+}
+
