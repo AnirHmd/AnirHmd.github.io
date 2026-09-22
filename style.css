@@ -1162,21 +1162,7 @@ body.night-mode .start-secondary a:hover {
   }
 }
 
-/* Raccourcis et fenêtre Paint. */
-.paint-shortcut {
-  border: 1px solid transparent;
-  background: transparent;
-  cursor: pointer;
-  font: inherit;
-}
-
-.icon-paint {
-  background: linear-gradient(#f8f6dd,#efdf9b);
-  border: 2px solid #fff8d7;
-  border-radius: 6px;
-  box-shadow: 0 4px #b18b55;
-}
-
+/* Entrée du menu Démarrer et fenêtre Paint. */
 .start-paint-link {
   display: grid;
   grid-template-columns: 42px minmax(0,1fr);
@@ -1492,4 +1478,141 @@ body.night-mode .start-paint-link:hover {
     animation: none;
   }
 }
+/* Écran de démarrage affiché à la première ouverture de l'onglet. */
+.boot-pending body > :not(.boot-screen) {
+  visibility: hidden;
+}
 
+.boot-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  grid-template-rows: 9px 1fr 9px;
+  background: #050505;
+  color: #fff;
+  font-family: Tahoma, Arial, sans-serif;
+  visibility: visible;
+}
+
+.boot-top-line,.boot-bottom-line {
+  background: linear-gradient(90deg,#143081,#3179d9,#143081);
+}
+
+.boot-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 24px;
+}
+
+.boot-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.boot-brand img {
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+}
+
+.boot-brand div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.boot-brand span {
+  font-size: 14px;
+  letter-spacing: .08em;
+}
+
+.boot-brand strong {
+  font-size: clamp(30px,6vw,50px);
+  font-weight: 500;
+  letter-spacing: -.04em;
+  white-space: nowrap;
+}
+
+.boot-brand em {
+  color: #ed862e;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.boot-progress {
+  width: 170px;
+  height: 19px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  overflow: hidden;
+  padding: 2px 4px;
+  border: 2px solid #777;
+  border-radius: 7px;
+  background: #0c0c0c;
+}
+
+.boot-progress span {
+  width: 18px;
+  height: 11px;
+  flex: none;
+  border-radius: 2px;
+  background: linear-gradient(#81b5ff,#1350c3 60%,#072a84);
+  box-shadow: 0 0 5px #225ac8;
+  transform: translateX(-80px);
+}
+
+.boot-running .boot-progress span {
+  animation: boot-loading 1.25s linear infinite;
+}
+
+@keyframes boot-loading {
+  from { transform: translateX(-80px); }
+  to { transform: translateX(190px); }
+}
+
+.boot-message {
+  min-height: 20px;
+  margin: 0;
+  font-size: 13px;
+  color: #d7d7d7;
+}
+
+.boot-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.boot-actions[hidden] { display: none; }
+
+.boot-actions button {
+  min-height: 36px;
+  padding: 7px 14px;
+  border: 1px solid #87b7f5;
+  border-radius: 5px;
+  background: linear-gradient(#4789df,#1552b3);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.boot-actions .boot-silent {
+  border-color: #7c7c7c;
+  background: linear-gradient(#555,#303030);
+}
+
+.boot-actions button:hover,.boot-actions button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boot-running .boot-progress span { animation: none; transform: none; }
+}

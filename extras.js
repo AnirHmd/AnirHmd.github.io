@@ -1,16 +1,9 @@
-// Petites applications du bureau : Paint et écran de veille.
+// Paint dans le menu Démarrer et écran de veille après inactivité.
 const uiLanguage = window.portfolioLanguage || 'fr';
 const english = uiLanguage === 'en';
 const t = (fr, en) => english ? en : fr;
 
-// Le raccourci Paint est disponible sur le bureau et dans le menu Démarrer.
-const desktopShortcuts = document.querySelector('.desktop-icons');
-const paintShortcut = document.createElement('button');
-paintShortcut.type = 'button';
-paintShortcut.className = 'desktop-icon paint-shortcut';
-paintShortcut.innerHTML = '<span class="icon-paint" aria-hidden="true">🎨</span><span>Paint</span>';
-desktopShortcuts?.append(paintShortcut);
-
+// Une seule entrée Paint, placée dans le menu Démarrer.
 const startPrimary = document.querySelector('.start-primary');
 const paintMenuButton = document.createElement('button');
 paintMenuButton.type = 'button';
@@ -76,10 +69,9 @@ function openPaint() {
 
 function closePaint() {
   paintWindow.hidden = true;
-  paintShortcut.focus();
+  document.querySelector('.start-button')?.focus();
 }
 
-paintShortcut.addEventListener('click', openPaint);
 paintMenuButton.addEventListener('click', openPaint);
 paintWindow.querySelector('.paint-close').addEventListener('click', closePaint);
 paintWindow.addEventListener('keydown', event => {
@@ -253,4 +245,3 @@ window.addEventListener('pointermove', () => {
 }, { passive: true });
 document.addEventListener('visibilitychange', scheduleScreenSaver);
 scheduleScreenSaver();
-
