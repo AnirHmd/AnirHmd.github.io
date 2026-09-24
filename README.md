@@ -13,7 +13,7 @@ Portfolio personnel inspiré de Windows XP, disponible en français et en anglai
 - Menu Démarrer avec mode nuit et choix de langue mémorisés dans le navigateur.
 - Paint : dessin à la souris ou au doigt, gomme, annulation, export PNG et partage vers une application de courriel lorsque l'appareil le permet.
 - Écran de veille après deux minutes d'inactivité.
-- Écran de démarrage automatique à la première ouverture de l'onglet. Le carillon rétro se joue si le navigateur autorise la lecture automatique.
+- Écran de démarrage automatique à la première ouverture de l'onglet, avec le vrai son de Windows XP. La lecture automatique dépend du navigateur.
 
 Le site est statique et ne demande aucune installation. Dans le dépôt GitHub, ouvrez `index.html` ; dans la copie de publication Sites, les fichiers sont dans `dist/`.
 
@@ -24,5 +24,6 @@ Le site est statique et ne demande aucune installation. Dans le dépôt GitHub, 
 - `translations.js` contient les textes anglais.
 - `app.js` gère l'horloge, la langue, le thème, le menu et les cartes.
 - `extras.js` gère Paint et l'écran de veille.
-- `boot.js` gère l'écran de démarrage et son carillon.
+- `boot.js` gère l'écran de démarrage et la lecture de `windows-xp-startup.wav`.
+- Le son correspond à la [vidéo fournie](https://youtu.be/7nQ2oiVqKHw) ; le fichier WAV provient d'une [archive publique](https://github.com/harshit17chaudhary/DSP_project/blob/master/Windows%20XP%20Startup.wav).
 - `portrait.jpg`, `windows-xp-logo.png`, `Fond portfolio.png` et `night-wallpaper.jpg` sont les images du portfolio.

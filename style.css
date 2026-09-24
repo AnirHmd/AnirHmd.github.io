@@ -1585,6 +1585,7 @@ body.night-mode .start-paint-link:hover {
   color: #d7d7d7;
 }
 
+
 @media (prefers-reduced-motion: reduce) {
   .boot-running .boot-progress span { animation: none; transform: none; }
 }
