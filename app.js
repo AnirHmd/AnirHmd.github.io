@@ -34,7 +34,7 @@ if (language === 'en') {
     'Navigation principale': 'Main navigation',
     'Commandes de la fenêtre': 'Window controls',
     'Fermer le site': 'Close website',
-    'Heure actuelle': 'Current time',
+    'Heure et date actuelles': 'Current time and date',
     'Pages du portfolio': 'Portfolio pages',
     'Liens personnels': 'Personal links',
     'Installation en cours': 'Installation in progress',
@@ -113,21 +113,22 @@ themeButtons.forEach(button => {
   });
 });
 
-// Affiche l'heure locale en direct dans la zone de notification.
+// Affiche l'heure et la date locales sans les secondes dans la zone de notification.
 function updateClock() {
   if (!clock) return;
   const now = new Date();
   const locale = language === 'en' ? 'en-CA' : 'fr-CA';
-  clock.textContent = new Intl.DateTimeFormat(locale, {
-    hour: '2-digit', minute: '2-digit', second: '2-digit',
-  }).format(now);
+  const pad = value => String(value).padStart(2, '0');
+  const time = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
+  const date = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+  clock.innerHTML = `<span class="tray-time">${time}</span><span class="tray-date">${date}</span>`;
   clock.title = new Intl.DateTimeFormat(locale, {
     dateStyle: 'full', timeStyle: 'long',
   }).format(now);
 }
 
 updateClock();
-setInterval(updateClock, 1_000);
+setInterval(updateClock, 30_000);
 
 // Ouvre et ferme le menu Démarrer.
 function closeStartMenu() {
@@ -192,4 +193,3 @@ document.querySelectorAll('[data-shutdown]').forEach(button => {
     document.body.classList.add('is-updating');
   });
 });
-

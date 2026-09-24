@@ -13,7 +13,7 @@ Portfolio personnel inspiré de Windows XP, disponible en français et en anglai
 - Menu Démarrer avec mode nuit et choix de langue mémorisés dans le navigateur.
 - Paint : dessin à la souris ou au doigt, gomme, annulation, export PNG et partage vers une application de courriel lorsque l'appareil le permet.
 - Écran de veille après deux minutes d'inactivité.
-- Écran de démarrage à la première ouverture de l'onglet, avec carillon rétro optionnel.
+- Écran de démarrage automatique à la première ouverture de l'onglet. Le carillon rétro se joue si le navigateur autorise la lecture automatique.
 
 Le site est statique et ne demande aucune installation. Dans le dépôt GitHub, ouvrez `index.html` ; dans la copie de publication Sites, les fichiers sont dans `dist/`.
 

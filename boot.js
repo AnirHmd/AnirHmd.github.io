@@ -26,23 +26,20 @@
           <div><span>Anir</span><strong>Windows <em>xp</em></strong></div>
         </div>
         <div class="boot-progress" aria-hidden="true"><span></span><span></span><span></span></div>
-        <p class="boot-message">${english ? 'Welcome to my portfolio' : 'Bienvenue sur mon portfolio'}</p>
-        <div class="boot-actions">
-          <button type="button" class="boot-start">${english ? 'Start with sound' : 'Démarrer avec le son'}</button>
-          <button type="button" class="boot-silent">${english ? 'Enter without sound' : 'Entrer sans son'}</button>
-        </div>
+        <p class="boot-message">${english ? 'Starting...' : 'Démarrage en cours...'}</p>
       </div>
       <div class="boot-bottom-line" aria-hidden="true"></div>`;
     document.body.prepend(boot);
-    boot.querySelector('.boot-start').focus();
-
     // Carillon original inspiré des anciens ordinateurs, créé sans fichier audio externe.
     function playStartupChime() {
       const AudioContextClass = window.AudioContext || window.webkitAudioContext;
       if (!AudioContextClass) return;
       try {
         const audio = new AudioContextClass();
-        audio.resume();
+        // Le navigateur peut refuser l'audio sans geste préalable : aucun son différé.
+        audio.resume().catch(() => {
+          if (audio.state !== 'closed') void audio.close().catch(() => {});
+        });
         const notes = [
           [392, 0, 0.72], [523.25, 0.14, 0.9], [659.25, 0.32, 1.12],
           [783.99, 0.61, 1.25], [1046.5, 0.86, 1.36], [659.25, 1.07, 1.12]
@@ -61,18 +58,17 @@
           oscillator.start(start);
           oscillator.stop(start + duration + 0.02);
         });
-        window.setTimeout(() => audio.close(), 3500);
+        window.setTimeout(() => {
+          if (audio.state !== 'closed') void audio.close().catch(() => {});
+        }, 3500);
       } catch {
         // Si Web Audio est indisponible, l'animation continue en silence.
       }
     }
 
-    function start(withSound) {
-      if (boot.classList.contains('boot-running')) return;
-      if (withSound) playStartupChime();
+    function start() {
+      playStartupChime();
       boot.classList.add('boot-running');
-      boot.querySelector('.boot-actions').hidden = true;
-      boot.querySelector('.boot-message').textContent = english ? 'Starting...' : 'Démarrage en cours...';
       try { sessionStorage.setItem(storageKey, '1'); } catch { /* Stockage facultatif. */ }
       window.setTimeout(() => {
         document.documentElement.classList.remove('boot-pending');
@@ -80,7 +76,6 @@
       }, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 500 : 2800);
     }
 
-    boot.querySelector('.boot-start').addEventListener('click', () => start(true));
-    boot.querySelector('.boot-silent').addEventListener('click', () => start(false));
+    start();
   }, { once: true });
 })();
