@@ -66,7 +66,7 @@
         sound.pause();
         document.documentElement.classList.remove('boot-pending');
         boot.remove();
-      }, 4500);
+      }, 6000);
     }
 
     start();
