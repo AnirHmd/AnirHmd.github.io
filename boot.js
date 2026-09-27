@@ -1,4 +1,4 @@
-// Écran de démarrage affiché une fois par onglet, avant le portfolio.
+// Écran de démarrage à la première entrée sur l'accueil dans cet onglet.
 (() => {
   const storageKey = 'portfolio-boot-seen';
   let alreadySeen = false;
@@ -7,7 +7,17 @@
   } catch {
     // La visite fonctionne aussi lorsque le stockage du navigateur est bloqué.
   }
-  if (alreadySeen) return;
+
+  // Un retour depuis Expérience ou Projets reste une navigation du portfolio,
+  // même si le navigateur refuse l'accès à sessionStorage.
+  let fromPortfolio = false;
+  try {
+    const previous = new URL(document.referrer);
+    fromPortfolio = previous.origin === window.location.origin;
+  } catch {
+    // Aucun référent : ouverture directe du site.
+  }
+  if (alreadySeen || fromPortfolio) return;
 
   document.documentElement.classList.add('boot-pending');
 

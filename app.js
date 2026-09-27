@@ -157,6 +157,11 @@ document.addEventListener('keydown', event => {
   }
 });
 
+// Le contenu replié ne doit pas être annoncé comme visible par un lecteur d'écran.
+document.querySelectorAll('.expandable-card .card-details').forEach(details => {
+  details.setAttribute('aria-hidden', 'true');
+});
+
 // Agrandit une expérience ou un projet et replie les autres cartes.
 document.querySelectorAll('[data-expand-card]').forEach(button => {
   button.addEventListener('click', () => {
@@ -166,9 +171,11 @@ document.querySelectorAll('[data-expand-card]').forEach(button => {
     card.parentElement?.querySelectorAll('.expandable-card.is-open').forEach(openCard => {
       openCard.classList.remove('is-open');
       openCard.querySelector('[data-expand-card]')?.setAttribute('aria-expanded', 'false');
+      openCard.querySelector('.card-details')?.setAttribute('aria-hidden', 'true');
     });
     card.classList.toggle('is-open', willOpen);
     button.setAttribute('aria-expanded', String(willOpen));
+    card.querySelector('.card-details')?.setAttribute('aria-hidden', String(!willOpen));
     if (willOpen) {
       window.setTimeout(() => card.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 180);
     }
