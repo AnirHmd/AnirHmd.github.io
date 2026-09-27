@@ -1,6 +1,14 @@
 // Écran de démarrage à la première entrée sur l'accueil dans cet onglet.
 (() => {
   const storageKey = 'portfolio-boot-seen';
+  const tabMarker = 'anir-portfolio-boot-seen';
+
+  // La page d'expérience et celle des projets ne doivent jamais démarrer XP,
+  // même si un ancien HTML mis en cache charge encore ce script.
+  const page = window.location.pathname.replace(/\/+$/, '').split('/').pop().toLowerCase();
+  if (page && page !== 'index' && page !== 'index.html') return;
+  if (new URLSearchParams(window.location.search).get('skipIntro') === '1') return;
+
   let alreadySeen = false;
   try {
     alreadySeen = sessionStorage.getItem(storageKey) === '1';
@@ -17,7 +25,13 @@
   } catch {
     // Aucun référent : ouverture directe du site.
   }
-  if (alreadySeen || fromPortfolio) return;
+  // window.name survit à la navigation dans le même onglet, même sans stockage.
+  if (alreadySeen || window.name === tabMarker || fromPortfolio) return;
+
+  // Enregistrer la visite avant le chargement du DOM évite une relance si la
+  // navigation commence pendant l'animation.
+  try { sessionStorage.setItem(storageKey, '1'); } catch { /* Stockage facultatif. */ }
+  window.name = tabMarker;
 
   document.documentElement.classList.add('boot-pending');
 
@@ -48,12 +62,11 @@
       boot.classList.add('boot-running');
       // Le son original est tenté automatiquement ; le navigateur peut le bloquer.
       try { void sound.play().catch(() => {}); } catch { /* Démarrage silencieux. */ }
-      try { sessionStorage.setItem(storageKey, '1'); } catch { /* Stockage facultatif. */ }
       window.setTimeout(() => {
         sound.pause();
         document.documentElement.classList.remove('boot-pending');
         boot.remove();
-      }, 6000);
+      }, 3000);
     }
 
     start();
